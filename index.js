@@ -1,12 +1,16 @@
-// let inputSelecionado = document.querySelectorAll("[type='text']");
-let inputSelecionado = document.getElementsByTagName('input');
+const inputText = document.querySelectorAll(".input-text");
 
-console.log(inputSelecionado);
 
-// inputSelecionado.addEventListener('click', () =>{
-//     if(inputSelecionado.innerHTML == ''){
-//         alert("preeencher");
-//     }else if(!inputSelecionado.innerHTML == ''){
-//         alert("Uhuuuuu!!!!")
-//     }
-// })
+inputText.forEach(input => {
+
+    input.addEventListener('change', () => {
+
+        if (input.value !== "") {
+
+            input.classList.add("campo-preenchido")
+        } else {
+
+            input.classList.remove("campo-preenchido")
+        }
+    });
+});
